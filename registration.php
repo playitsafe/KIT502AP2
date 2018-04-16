@@ -1,8 +1,11 @@
-<?php
-include 'header.php';
-?> 
-
-
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/style.css">
+    <script src="JQuery/jquery-3.3.1.js"></script>  
+</head>
+<body>
+<h1>Welcome! You are about to Creat an Account</h1>
     <div id="regibox">
         <div id="reginput">
             <form id="regiform" method="get">
@@ -52,7 +55,7 @@ include 'header.php';
                     <input type="password" id="repassword" name="repassword" class="required" minlength="6" maxlength="12" required>
                 </div>
                 <div class="checkpwd" id="checkmatch"></div>
-            </form>
+            
             <div id="alertbox">
                 <h3>Password must contain the following:</h3>
                 <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
@@ -63,7 +66,9 @@ include 'header.php';
 
             </div>
             <input type="submit" id="send" value="Join in!">
-
+            <input type="reset" id="reset" value="Reset">
+          </form>
+          <input type="button" onclick="location.href='index.php'" value="Go to Home Page" id="gohome"><br>
         </div>
 
     </div>
@@ -175,3 +180,5 @@ include 'header.php';
 
     </script>
 </body>
+
+</html>

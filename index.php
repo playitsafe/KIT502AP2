@@ -1,9 +1,9 @@
- <?php
+<?php
     include 'header.php';
- ?>  
-    
+ ?>
+
     <div id="mainarea">
-                
+
         <div id="shopcontainer">
             <ul>
                 <li class="shops">
@@ -21,7 +21,7 @@
                         <div class="shopimg"><img src="img/ref.jpg">
                         </div>
                         <div class="shopname">
-                        The Ref
+                            The Ref
                         </div>
                     </a>
                 </li>
@@ -30,35 +30,34 @@
                         <div class="shopimg"><img src="img/ttt.jpg">
                         </div>
                         <div class="shopname">
-                        The Trade Table
+                            The Trade Table
                         </div>
                     </a>
                 </li>
-                
+
             </ul>
-            
+
         </div>
-       
+
     </div>
-    
+
     <script>
-        
-        
         $("#loginbox").hide();
-        window.onclick = function(event){
-            if($(event.target).closest("#loginbtn").length){
-                $("#loginbox").show();                                
-            } else if($(event.target).closest("#loginbox").length){
+        window.onclick = function(event) {
+            if ($(event.target).closest("#loginbtn").length) {
+                $("#loginbox").show();
+            } else if ($(event.target).closest("#loginbox").length) {
                 $("#loginbox").show();
             } else {
                 $("#loginbox").hide();
-            } ;      
+            };
         };
-        
+
     </script>
-    
-    
-    
-    
-</body>
-</html>
+
+
+
+
+    </body>
+
+    </html>

@@ -191,7 +191,7 @@
             font-size: 20px;
             font-family: Garamond;
         }
-
+/*========================*/
         input {
             width: 100%;
             padding: 12px;
@@ -208,18 +208,20 @@
             font-size: 20px
         }
 
-        #send {
-            width:40%;
+        #send, #gohome, #reset{
+            width:30%;
             font-size: 20px;
             
         }
 
-       #send:hover {
+       #send:hover, #gohome:hover, #reset:hover {
         	background-color: red;
             color: black;
             opacity: 0.8;
         }
-        
+
+         
+
         #alertbox {
             display:none;
             position: relative;
@@ -247,5 +249,7 @@
             left: -35px;
             content: "x";
         }
+
+       
 
     </style>
