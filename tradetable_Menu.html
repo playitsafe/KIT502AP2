@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Utas Online Order System!</title>
+    <link rel="stylesheet" href="css/homepage.css">
+    <script src="JQuery/jquery-3.3.1.js"></script>
+    
+    
+</head>
+<body>
+    <div id="banner">
+        <img id="bannerimg" src="img/food.jpeg" alt="foodbanner">
+        <div id="centredword">
+            <h1>The Trade Table</h1>
+            <h2>Opening hour: 7:30~17:30</h2>
+            <h3>Online Order Available!</h3>
+            
+        </div>
+    </div>
+    
+           
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="Lazenby_Menu.html">Lazenbys Menu</a></li>
+            <li><a href="Ref_Menu.html">The Ref Menu</a></li>
+            <li><a href="tradetable_Menu.html">The Trade Table Menu</a></li>
+            <li><a href="Master_List.html">Master List for Admin</a></li>         
+            <li style="float: right" id="loginbtn">
+                <a>Login</a>
+            </li>           
+            <li style="float: right"><a href="registration.html">Registration</a></li>
+        </ul>
+    </div>
+    <div id="loginbox">
+        <div id="loginput">
+            <form id="loginform" method="get">
+                <label for="username">Username</label><br>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Login"><br>
+                <span>New to Utas?</span>
+                <input type="submit" value="Creat a new account!"><br>
+                
+            </form>
+        </div>            
+    </div>    
+    
+    <div id="mainarea">
+                
+        <div id="shopcontainer">
+            <form>
+            <ul>
+                <li class="shops">
+                    <h3>Breakfask</h3>
+                    
+                    <p>
+                        Egg Roll
+                        $<span>5.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>   
+                    <p>
+                        Bacon n'Egg 
+                        $<span>7.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        Brekki Roll 
+                        $<span>10.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        Hash Brown 
+                        $<span>1.50</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        Donut 
+                        $<span>2.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        PanCake 
+                        $<span>11.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>                   
+                    
+                </li>
+                
+                <li class="shops">
+                    <h3>Lunch</h3>
+                    
+                    <p>
+                        Hamburger
+                        $<span>9.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>   
+                    <p>
+                        Aussie Burger 
+                        $<span>9.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        Fry Chips 
+                        $<span>5.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        Pasta 
+                        $<span>9.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        Butter Chicken 
+                        $<span>7.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        Noodle 
+                        $<span>7.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    
+                </li>
+                
+                <li class="shops">
+                    <h3>Drinks</h3>
+                    
+                    <p>
+                        Coke
+                        $<span>3.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>   
+                    <p>
+                        Sprite 
+                        $<span>3.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        Flat White 
+                        $<span>4.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        Long Black 
+                        $<span>3.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        Cappuccino 
+                        $<span>4.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    <p>
+                        Mocha 
+                        $<span>5.00</span>
+                        <input type="number" placeholder="Order Quantity">
+                        <input type="text" placeholder="Your Comment">
+                    </p>
+                    
+                </li>
+                
+            </ul>
+                
+            <input id="checkout" type="button" value="Check-Out!">
+            <button type="reset">Reset</button>
+            </form>
+        </div>
+       
+    </div>
+    
+    <script>
+        
+        
+        $("#loginbox").hide();
+        window.onclick = function(event){
+            if($(event.target).closest("#loginbtn").length){
+                $("#loginbox").show();                                
+            } else if($(event.target).closest("#loginbox").length){
+                $("#loginbox").show();
+            } else {
+                $("#loginbox").hide();
+            } ;      
+        };
+        
+    </script>
+    
+    
+    
+    
+</body>
+</html>

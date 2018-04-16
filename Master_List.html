@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Utas Online Order System!</title>
+    <link rel="stylesheet" href="css/homepage.css">
+    <script src="JQuery/jquery-3.3.1.js"></script>
+
+
+</head>
+
+<body>
+    <div id="banner">
+        <img id="bannerimg" src="img/food.jpeg" alt="foodbanner">
+        <div id="centredword">
+            <h1>Master Menu List</h1>
+            <h2>For Utas Cafes</h2>
+            <h3>Internal Use Only!</h3>
+
+        </div>
+    </div>
+
+
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="Lazenby_Menu.html">Lazenbys Menu</a></li>
+            <li><a href="Ref_Menu.html">The Ref Menu</a></li>
+            <li><a href="tradetable_Menu.html">The Trade Table Menu</a></li>
+            <li><a href="Master_List.html">Master List for Admin</a></li>
+            <li style="float: right" id="loginbtn">
+                <a>Login</a>
+            </li>
+            <li style="float: right"><a href="registration.html">Registration</a></li>
+        </ul>
+    </div>
+    <div id="loginbox">
+        <div id="loginput">
+            <form id="loginform" method="get">
+                <label for="username">Username</label><br>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Login"><br>
+                <span>New to Utas?</span>
+                <input type="submit" value="Creat a new account!"><br>
+
+            </form>
+        </div>
+    </div>
+
+    <div id="mainarea">
+
+        <div>
+            <h3>The Master Selection</h3>
+        </div>
+        <button id="add">Click to add a new line!</button>
+
+        <p>
+            <input type="text" value="Egg Roll"> $
+            <input type="number" value="5.00">
+            <button value="save">Save</button>
+            <button value="remove" class="remove">Remove</button>
+        </p>
+        <p>
+            <input type="text" value="Bacon n'Egg"> $
+            <input type="number" value="7.00">
+            <button value="save">Save</button>
+            <button value="remove" class="remove">Remove</button>
+        </p>
+        <p>
+            <input type="text" value="Brekki Roll"> $
+            <input type="number" value="11.00">
+            <button value="save">Save</button>
+            <button value="remove" class="remove">Remove</button>
+        </p>
+        <p>
+            <input type="text" value="Hash Brown"> $
+            <input type="number" value="1.50">
+            <button value="save">Save</button>
+            <button value="remove" class="remove">Remove</button>
+        </p>
+        <p>
+            <input type="text" value="Donut"> $
+            <input type="number" value="2.00">
+            <button value="save">Save</button>
+            <button value="remove" class="remove">Remove</button>
+        </p>
+        <p>
+            <input type="text" value="PanCake"> $
+            <input type="number" value="11.00">
+            <button value="save">Save</button>
+            <button value="remove" class="remove">Remove</button>
+        </p>
+        <p>
+            <input type="text" value="Hamburger"> $
+            <input type="number" value="9.00">
+            <button value="save">Save</button>
+            <button value="remove" class="remove">Remove</button>
+        </p>
+        <p>
+            <input type="text" value="Aussie Burger"> $
+            <input type="number" value="9.00">
+            <button value="save">Save</button>
+            <button value="remove" class="remove">Remove</button>
+        </p>
+        <p>
+            <input type="text" value="Fry Chips"> $
+            <input type="number" value="3.00">
+            <button value="save">Save</button>
+            <button value="remove" class="remove">Remove</button>
+        </p>
+        <p>
+            <input type="text" value="Pasta"> $
+            <input type="number" value="9.00">
+            <button value="save">Save</button>
+            <button value="remove" class="remove">Remove</button>
+        </p>
+        <p>
+            <input type="text" value="Noodle"> $
+            <input type="number" value="7.00">
+            <button value="save">Save</button>
+            <button value="remove" class="remove">Remove</button>
+        </p>
+    </div>
+
+    <script>
+        $("#loginbox").hide();
+        window.onclick = function(event) {
+            if ($(event.target).closest("#loginbtn").length) {
+                $("#loginbox").show();
+            } else if ($(event.target).closest("#loginbox").length) {
+                $("#loginbox").show();
+            } else {
+                $("#loginbox").hide();
+            };
+        };
+
+        $(".remove").click(function() {
+            $(this).parent().remove();
+        });
+
+        $("#add").click(function() {
+            $("p:last").append('<p><input type="text"> &#36;   <input type="number"> <button value="save">Save</button> <button class="remove">Remove</button> </p>');
+        })
+    </script>
+
+
+
+
+</body>
+
+</html>
