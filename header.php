@@ -23,7 +23,7 @@
            
     <div id="navbar">
         <ul>
-            <li><a href="index.html">Home Page</a></li>
+            <li><a href="index.php">Home Page</a></li>
             <li><a href="Lazenby_Menu.html">Lazenbys Menu</a></li>
             <li><a href="Ref_Menu.html">The Ref Menu</a></li>
             <li><a href="tradetable_Menu.html">The Trade Table Menu</a></li>
@@ -31,7 +31,7 @@
             <li style="float: right" id="loginbtn">
                 <a>Login</a>
             </li>           
-            <li style="float: right"><a href="registration.html">Registration</a></li>
+            <li style="float: right"><a href="registration.php">Registration</a></li>
         </ul>
     </div>
     <div id="loginbox">

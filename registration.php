@@ -1,42 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Utas Online Order System!</title>
-    <link rel="stylesheet" href="css/registration.css">
-    <script src="JQuery/jquery-3.3.1.js"></script>
-    
-
-
-</head>
-
-<body>
-    <div id="banner">
-        <img id="bannerimg" src="img/food.jpeg" alt="foodbanner">
-        <div id="centredword">
-            <h1>Spoil Your Taste Bud in UTAS!</h1>
-            <h2>Try some DELICIOUS food here!</h2>
-            <h3>Online Order Available!</h3>
-
-        </div>
-    </div>
-
-
-    <div id="navbar">
-        <ul>
-            <li><a href="index.html">Home Page</a></li>
-            <li><a href="Lazenby_Menu.html">Lazenbys Menu</a></li>
-            <li><a href="Ref_Menu.html">The Ref Menu</a></li>
-            <li><a href="tradetable_Menu.html">The Trade Table Menu</a></li>
-            <li><a href="Master_List.html">Master List for Admin</a></li>
-            <li style="float: right" id="loginbtn">
-                <a href="index.html">Login</a>
-            </li>
-            <li style="float: right"><a href="registration.html">Registration</a></li>
-        </ul>
-    </div>
-     
+<?php
+include 'header.php';
+?> 
 
 
     <div id="regibox">
