@@ -1,14 +1,14 @@
 <style>
         #banner {
             position: relative;
-            height: 360px;
+            height: 300px;
             text-align: center;
         }
 
         #bannerimg {
             opacity: 0.4;
             width: 100%;
-            height: 360px;
+            height: 300px;
         }
 
         #centredword {
@@ -106,7 +106,7 @@
             height: 450px;
             background-color: #d1d1d1;
             position: absolute;
-            top: 422px;
+            top: 362px;
             right: 8px;
             z-index: 1;
 

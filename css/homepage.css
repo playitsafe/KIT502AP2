@@ -16,7 +16,10 @@
             font-size: 160%;
             overflow: hidden;
             text-align: center;
-            z-index: 10;top:5%;left:5%;right:5%;
+            z-index: 10;
+            top:5%;
+            left:5%;
+            right:5%;
         }
         
         #centredword h1{
