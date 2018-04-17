@@ -8,7 +8,7 @@
 <h1>Welcome! You are about to Creat an Account</h1>
     <div id="regibox">
         <div id="reginput">
-            <form id="regiform" method="get">
+            <form id="regiform" method="post" action="includes/register_process.php">
                 <div class="inputdiv">
                     <label for="firstname">Firstname:</label><br>
                     <input type="text" class="name" name="firstname" class="required" required>
@@ -155,9 +155,6 @@
         $(document).ready(function(){
             $("#repassword").keyup(checkPasswordMatch);
         });
-
-
-
 
         $("#loginbox").hide();
         window.onclick = function(event) {
