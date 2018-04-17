@@ -1,6 +1,6 @@
 <?php
 
-include('includes/db_conn.php');
+include ('db_conn.php');
 
 $checkExist = $mysqli->query("SELECT id FROM users");
 
@@ -21,7 +21,7 @@ if (empty($checkExist)) {
 }
 
 
-if (isset($_POST['Join in!'])) {
-	$query = "INSERT INTO users VALUES ('1', '1', 'sw', 'sws', 'email', '3232', '34324432432', 'cdscdfdsf', 'ident')";
+if (!isset($_POST['register'])) {
+	$query = "INSERT INTO users VALUES ('5', '5', 'sw', 'sws', 'email', '3232', '34324432432', 'cdscdfdsf', 'ident')";
     $result = $mysqli->query($query);
 }

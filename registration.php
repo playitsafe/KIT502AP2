@@ -65,7 +65,7 @@
                 <p id="length" class="invalid">Minimum <b>6 characters</b></p>
 
             </div>
-            <input type="submit" id="send" value="Join in!">
+            <input type="submit" id="send" name="register" value="Join in!">
             <input type="reset" id="reset" value="Reset">
           </form>
           <input type="button" onclick="location.href='index.php'" value="Go to Home Page" id="gohome"><br>
