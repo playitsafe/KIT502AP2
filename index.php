@@ -7,7 +7,7 @@
         <div id="shopcontainer">
             <ul>
                 <li class="shops">
-                    <a href="index.php">
+                    <a href="Lazenby_Menu.php">
                         <div class="shopimg">
                             <img src="img/lzby.jpg">
                         </div>
@@ -17,7 +17,7 @@
                     </a>
                 </li>
                 <li class="shops">
-                    <a href="index.php">
+                    <a href="Ref_Menu.php">
                         <div class="shopimg"><img src="img/ref.jpg">
                         </div>
                         <div class="shopname">
@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li class="shops">
-                    <a href="index.php">
+                    <a href="tradetable_menu.php">
                         <div class="shopimg"><img src="img/ttt.jpg">
                         </div>
                         <div class="shopname">
