@@ -165,7 +165,7 @@
         }
 
         #regitable, tr, th, td {
-            text-align: left;
+            text-align: left;            
         }
 
         #regitable {
@@ -230,18 +230,13 @@
             opacity: 0.8;
         }
 
-         
-
-        
-
-
         .valid {
             color: green;
         }
 
         .valid:before {
             position: relative;
-            left: -35px;
+            left: -30px;
             content: "V";
         }
 
@@ -251,7 +246,7 @@
 
         .invalid:before {
             position: relative;
-            left: -35px;
+            left: -30px;
             content: "x";
         }
 
@@ -264,11 +259,18 @@
             display:none;
             position: relative;
             padding: 1px;
+            font-size: 15px;
             
         }
        label {
             font-size: 18px;
             
        }
+
+       #checkmatch {
+        color: pink;
+       }
+
+     
 
     </style>

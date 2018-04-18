@@ -18,8 +18,8 @@
                         <th><label for="lastname">Lastname:</label><br></th>
                     </tr>
                     <tr>
-                        <td><input type="text" class="name" name="firstname" class="required" required></td>
-                        <td><input type="text" class="name" name="lastname" class="required" required></td>
+                        <td><input type="text" class="name" name="firstname"></td>
+                        <td><input type="text" class="name" name="lastname"></td>
                     </tr>
                     <tr>
                         <th>I am a</th>
@@ -29,42 +29,51 @@
                         <td><select id="idselect" name="idtype" onchange="idPrefix()"><option id="student" value="US">Student</option>
                         <option id="staff" value="UE">Staff</option>
                         </select></td>
-                        <td><span id="idprefix">US</span><input type="text" name="userid" id="userid" class="required" maxlength="4" required></td>
+                        <td><span id="idprefix">US</span><input type="text" name="userid" style="width: 34%" id="userid" maxlength="4"></td>
                     </tr>
                     <tr>
                         <th><label for="email">E-mail address:</label></th>
                         <th><label for="mobile">Your Mobile Number:</label></th>
                     </tr>
                     <tr>
-                        <td><input type="text" id="email" name="email" class="required" required></td>
-                        <td><input type="text" id="mobile" name="mobile" class="required" required></td>
+                        <td><input type="text" id="email" name="email"></td>
+                        <td><input type="text" id="mobile" name="mobile"></td>
                     </tr>
                     <tr>
                         <th><label for="creditcrad">Your Credit Card Number:</label><br></th>
+                        <td rowspan="7">
+                           <div id="alertbox">
+                               <h4>Password must contain the following:</h4>
+                               <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                               <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                               <p id="number" class="invalid">A <b>number</b></p>
+                               <p id="special" class="invalid">A <b>special character(~!#$)</b></p>
+                               <p id="length" class="invalid">Minimum <b>6 characters</b></p>
+                          </div> 
+                        </td>
                     </tr>
                     <tr>
-                        <td><input type="text" id="creditcrad" name="creditcrad" class="required" required></td>
+                        <td><input type="text" id="creditcrad" name="creditcrad"></td>
                     </tr>
                     <tr>
                         <th><label for="password">Password:</label></th>
+                        
+                    </tr>
+                    <tr>
+                        <td><input type="password" id="password" name="password"></td>
+                        
+                    </tr>
+                    <tr><th><div class="checkpwd" id="checkmatch"></div></th></tr>
+                    <tr>
                         <th><label for="password2">Confirm Password:</label></th>
                     </tr>
                     <tr>
-                        <td><input type="password" id="password" name="password" pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" class="required" minlength="6" maxlength="12" required></td>
-                        <td><input type="password" id="repassword" name="repassword" class="required" minlength="6" maxlength="12" required></td>
+                        <td><input type="password" id="repassword" name="repassword"></td>
                     </tr>
-                    <tr><th><div class="checkpwd" id="checkmatch"></div></th></tr>
+
                 </table>
 
-            <div id="alertbox">
-                <h4>Password must contain the following:</h4>
-                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                <p id="number" class="invalid">A <b>number</b></p>
-                <p id="special" class="invalid">A <b>special character(~!#$)</b></p>
-                <p id="length" class="invalid">Minimum <b>6 characters</b></p>
-
-            </div>
+            
             <input type="submit" id="send" name="register" value="Join in!">
             <input type="reset" id="reset" value="Reset">
           </form>
