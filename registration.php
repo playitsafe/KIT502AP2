@@ -5,7 +5,10 @@
     <script src="JQuery/jquery-3.3.1.js"></script>  
 </head>
 <body>
-<h1>Welcome! You are about to Creat an Account</h1>
+<?php
+    include 'header.php';
+ ?>
+
     <div id="regibox">
         <div id="reginput">
             <form id="regiform" method="post" action="includes/register_process.php">
@@ -57,7 +60,7 @@
                 <div class="checkpwd" id="checkmatch"></div>
             
             <div id="alertbox">
-                <h3>Password must contain the following:</h3>
+                <h4>Password must contain the following:</h4>
                 <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
                 <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
                 <p id="number" class="invalid">A <b>number</b></p>
