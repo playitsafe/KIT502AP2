@@ -32,7 +32,7 @@
                 </div>
                 <div class="inputdiv">
                     <label for="email">E-mail address:</label><br>
-                    <input type="email" id="email" name="email" class="required" required>
+                    <input type="text" id="email" name="email" class="required" required>
                 </div>
                 <div class="inputdiv">
                     <label for="mobile">Your Mobile Number:</label><br>
@@ -86,10 +86,10 @@
             document.getElementById("alertbox").style.display = "block";
         }
 
-        myInput.onblur = function() {
-            document.getElementById("alertbox").style.display = "none";
+        //myInput.onblur = function() {
+        //    document.getElementById("alertbox").style.display = "none";
 
-        }
+        //}
 
         myInput.onkeyup = function() {
             var lowerCaseLetter = /[a-z]/g;

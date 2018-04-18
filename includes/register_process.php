@@ -54,7 +54,10 @@ if (isset($_POST['register'])) {
 	    	echo "<script>alert('Passwords don\'t match');parent.location.href='../registration.php'</script>";
 	    } elseif (!(($c1 && $c2 && $c3) && ($c4 || $c5 || $c6 || $c7))) {
 	    	echo "<script>alert('Invalid Password Format');parent.location.href='../registration.php'</script>";
-	    } 
+	    } else {
+	    	//insert data to DB
+	    	
+	    }
 
 	}
 }//This is end of if issetpost
