@@ -27,8 +27,8 @@
                 <input type="radio" name="idtype" value="staff">Staff<br>-->
                 <div class="inputdiv">
 
-                    <label for="userid" name="userid" value="userid">Student/Stuff ID:</label><br>
-                    <span id="idprefix">US</span><input type="text" id="userid" value="" class="required" maxlength="4" required>
+                    <label for="userid" value="userid">Student/Stuff ID:</label><br>
+                    <span id="idprefix">US</span><input type="text" name="userid" id="userid" class="required" maxlength="4" required>
                 </div>
                 <div class="inputdiv">
                     <label for="email">E-mail address:</label><br>
