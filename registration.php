@@ -26,7 +26,7 @@
                         <th>My Student/Staff ID:</th>
                     </tr>
                     <tr>
-                        <td><select id="idselect" name="idtype" onchange="idPrefix()"><option id="student" value="US">Student</option>
+                        <td><select id="idselect" style="width: 34%" name="idtype" onchange="idPrefix()"><option id="student" value="US">Student</option>
                         <option id="staff" value="UE">Staff</option>
                         </select></td>
                         <td><span id="idprefix">US</span><input type="text" name="userid" style="width: 34%" id="userid" maxlength="4"></td>

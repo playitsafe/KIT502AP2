@@ -15,6 +15,7 @@ if (empty($checkExist)) {
 	             `CreditCard` int(16) NOT NULL,
 	             `Password` varchar(11) NOT NULL,
 	             `Identity` varchar(11) NOT NULL,
+	             `Balance` varchar(11) NOT NULL,
 	             PRIMARY KEY (`id`)
 	             )" ;
 	$result = $mysqli->query($query);
@@ -23,14 +24,14 @@ if (empty($checkExist)) {
 
 if (isset($_POST['register'])) {
 	$firstname = $mysqli->real_escape_string($_POST['firstname']);
-	$lastname = $mysqli->real_escape_string($_POST['lastname']);
-	$identity = $_POST['idtype'];
+	$lastname = $mysqli->real_escape_string($_POST['lastname']);	
 	$userid = $mysqli->real_escape_string($_POST['userid']);
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);	
 	$mobile = $mysqli->real_escape_string($_POST['mobile']);
 	$creditcrad = $mysqli->real_escape_string($_POST['creditcrad']);
 	$password = $mysqli->real_escape_string($_POST['password']);
 	$md5password = md5($password);
+	$uid = $_POST['idtype'] . $userid;
 	if (empty($firstname) || empty($lastname) || empty($userid) || empty($email) || empty($mobile) || empty($creditcrad) || empty($md5password) ) {
 		echo "<script>alert('All Fields need to be filled out!!');parent.location.href='../registration.php'</script>";
     	exit();
@@ -56,11 +57,18 @@ if (isset($_POST['register'])) {
 	    	echo "<script>alert('Invalid Password Format');parent.location.href='../registration.php'</script>";
 	    } else {
 	    	//insert data to DB
-	    	
+	    	if ($_POST['idtype'] == 'US') {
+	    		$identity = 'student';
+	    	} elseif ($_POST['idtype'] == 'UE') {
+                $identity = 'Employee';
+	    	}
+	    	$query = "INSERT INTO users (uid, FirstName, LastName, Email, Mobile, CreditCard, Password, Identity) VALUES ('$uid', '$firstname', '$lastname', '$email', '$mobile', '$creditcrad', '$md5password', '$identity')";
+	    	$result = $mysqli->query($query);
+	    	header('Location: ../index.php');
 	    }
 
 	}
 }//This is end of if issetpost
 
-//$query = "INSERT INTO users VALUES ('5', '5', 'sw', 'sws', 'email', '3232', '34324432432', 'cdscdfdsf', 'ident')";
-    //$result = $mysqli->query($query);
+//
+    //
