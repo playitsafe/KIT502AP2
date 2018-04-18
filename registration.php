@@ -12,53 +12,50 @@
     <div id="regibox">
         <div id="reginput">
             <form id="regiform" method="post" action="includes/register_process.php">
-                <div class="inputdiv">
-                    <label for="firstname">Firstname:</label><br>
-                    <input type="text" class="name" name="firstname" class="required" required>
-                </div>
-                <div class="inputdiv">
-                    <label for="lastname">Lastname:</label><br>
-                    <input type="text" class="name" name="lastname" class="required" required>
-                </div>
-                <div class="inputdiv">I am a
-                    <select id="idselect" name="idtype" onchange="idPrefix()" class="required"><br>
-                    <option id="student" value="US">Student</option>
-                    <option id="staff" value="UE">Staff</option>
-                    </select>
-                </div><br>
-                <!--<input type="radio" name="idtype" value="student">Student  
-                <input type="radio" name="idtype" value="staff">Staff<br>-->
-                <div class="inputdiv">
+                <table id="regitable">
+                    <tr>
+                        <th><label for="firstname">Firstname:</label></th>
+                        <th><label for="lastname">Lastname:</label><br></th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="name" name="firstname" class="required" required></td>
+                        <td><input type="text" class="name" name="lastname" class="required" required></td>
+                    </tr>
+                    <tr>
+                        <th>I am a</th>
+                        <th>My Student/Staff ID:</th>
+                    </tr>
+                    <tr>
+                        <td><select id="idselect" name="idtype" onchange="idPrefix()"><option id="student" value="US">Student</option>
+                        <option id="staff" value="UE">Staff</option>
+                        </select></td>
+                        <td><span id="idprefix">US</span><input type="text" name="userid" id="userid" class="required" maxlength="4" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="email">E-mail address:</label></th>
+                        <th><label for="mobile">Your Mobile Number:</label></th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="email" name="email" class="required" required></td>
+                        <td><input type="text" id="mobile" name="mobile" class="required" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="creditcrad">Your Credit Card Number:</label><br></th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="creditcrad" name="creditcrad" class="required" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="password">Password:</label></th>
+                        <th><label for="password2">Confirm Password:</label></th>
+                    </tr>
+                    <tr>
+                        <td><input type="password" id="password" name="password" pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" class="required" minlength="6" maxlength="12" required></td>
+                        <td><input type="password" id="repassword" name="repassword" class="required" minlength="6" maxlength="12" required></td>
+                    </tr>
+                    <tr><th><div class="checkpwd" id="checkmatch"></div></th></tr>
+                </table>
 
-                    <label for="userid" value="userid">Student/Stuff ID:</label><br>
-                    <span id="idprefix">US</span><input type="text" name="userid" id="userid" class="required" maxlength="4" required>
-                </div>
-                <div class="inputdiv">
-                    <label for="email">E-mail address:</label><br>
-                    <input type="text" id="email" name="email" class="required" required>
-                </div>
-                <div class="inputdiv">
-                    <label for="mobile">Your Mobile Number:</label><br>
-                    <input type="text" id="mobile" name="mobile" class="required" required>
-                </div>
-                <div class="inputdiv">
-                    <label for="creditcrad">Your Credit Card Number:    </label><br>
-                    <input type="text" id="creditcrad" name="creditcrad" class="required" required>
-                </div>
-
-
-                <div class="inputdiv" id="inputpwd">
-                    <label for="password">Password:</label><br>
-                    <input type="password" id="password" name="password" pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" class="required" minlength="6" maxlength="12" required>
-                </div>
-
-
-                <div class="inputdiv">
-                    <label for="password2">Confirm Password:</label><br>
-                    <input type="password" id="repassword" name="repassword" class="required" minlength="6" maxlength="12" required>
-                </div>
-                <div class="checkpwd" id="checkmatch"></div>
-            
             <div id="alertbox">
                 <h4>Password must contain the following:</h4>
                 <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
@@ -71,7 +68,7 @@
             <input type="submit" id="send" name="register" value="Join in!">
             <input type="reset" id="reset" value="Reset">
           </form>
-          <input type="button" onclick="location.href='index.php'" value="Go to Home Page" id="gohome"><br>
+          
         </div>
 
     </div>

@@ -159,37 +159,47 @@
             width: 60%;
             margin-left: 18%;
             margin-right: 18%;
-
             background-color: #b2b2b2;
             padding: 2%;
 
+        }
+
+        #regitable, tr, th, td {
+            text-align: left;
+        }
+
+        #regitable {
+            width: 80%;
+            float: center;
         }
 
         #regiform input[type="text"],
         #regiform input[type="email"],
         #regiform input[type="password"] {
             width: 40%;
-            padding: 12px;
+            padding: 3px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            margin-top: 6px;
-            margin-bottom: 16px;
+            margin-top: 3px;
+            margin-bottom: 5px;
         }
 
-        #regiform input[type="submit"] {
-            width: 30%;
+        
+
+        #regiform input {
+            width: 15%;
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
             margin-top: 6px;
-            margin-bottom: 16px;
+            margin-bottom: 5px;
         }
 
         #regiform input[type] {
             font-size: 20px;
-            font-family: Garamond;
+            
         }
 /*========================*/
         input {
@@ -199,7 +209,7 @@
             border-radius: 4px;
             box-sizing: border-box;
             margin-top: 6px;
-            margin-bottom: 16px;
+            margin-bottom: 6px;
         }
 
         #idselect {
@@ -222,12 +232,7 @@
 
          
 
-        #alertbox {
-            display:none;
-            position: relative;
-            padding: 3px;
-            margin-top: 1px;
-        }
+        
 
 
         .valid {
@@ -250,6 +255,20 @@
             content: "x";
         }
 
-       
+       #idselect {
+            border-radius: 4px;
+            height: 30px;
+        }
+
+       #alertbox {
+            display:none;
+            position: relative;
+            padding: 1px;
+            
+        }
+       label {
+            font-size: 18px;
+            
+       }
 
     </style>
