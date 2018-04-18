@@ -51,7 +51,7 @@ if (isset($_POST['register'])) {
 	    } elseif (strlen($password)<6 || strlen($password)>12) {
 	    	echo "<script>alert('Password must be 6 to 12 characters in length');parent.location.href='../registration.php'</script>";
 	    } elseif ($password !== $_POST['repassword']) {
-	    	echo "<script>alert('Passwords don/'t match');parent.location.href='../registration.php'</script>";
+	    	echo "<script>alert('Passwords don\'t match');parent.location.href='../registration.php'</script>";
 	    } elseif (!(($c1 && $c2 && $c3) && ($c4 || $c5 || $c6 || $c7))) {
 	    	echo "<script>alert('Invalid Password Format');parent.location.href='../registration.php'</script>";
 	    } 
