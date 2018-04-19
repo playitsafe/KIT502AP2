@@ -1,5 +1,5 @@
 <?php
-    include 'includes/header.php';
+    include_once 'header.php';
  ?>
 
     <div id="mainarea">

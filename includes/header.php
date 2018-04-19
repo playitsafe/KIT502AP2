@@ -27,6 +27,34 @@
             <li><a href="Ref_Menu.php">The Ref Menu</a></li>
             <li><a href="tradetable_Menu.php">The Trade Table Menu</a></li>
             <li><a href="Master_List.php">Master List for Admin</a></li>
+            
+            <?php
+            
+            if (isset($_SESSION['uid'])) {
+                echo '<li style="float: right" id="loginbtn">
+                      <a>My Account Detail</a></li>
+                      <li style="float: right"><a>Welcome:'.$_SESSION['uid'] . '</a></li></ul></div>
+                      <div id="loginbox">
+                        <div id="loginput">
+                           <form id="loginform" method="get">
+                <label for="username">Username</label><br>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Login"><br>
+                <span>New to Utas?</span>
+                            </form>
+            <input type="button" onclick="location.href='registration.php'" value="Creat a new account!"><br>
+        </div>
+    </div>
+
+
+            ';
+
+            } else {}
+
+            ?>
+
             <li style="float: right" id="loginbtn">
                 <a>Login</a>
             </li>
@@ -35,12 +63,12 @@
     </div>
     <div id="loginbox">
         <div id="loginput">
-            <form id="loginform" method="get">
+            <form id="loginform" method="post" action="includes/login_process.php">
                 <label for="username">Username</label><br>
-                <input type="text" id="username" name="username" required><br><br>
+                <input type="text" id="username" name="username" placeholder="Your E-mail/UID"><br><br>
                 <label for="password">Password</label><br>
-                <input type="password" id="password" name="password" required><br><br>
-                <input type="submit" value="Login"><br>
+                <input type="password" id="password" name="password" placeholder="Your Password"><br><br>
+                <input type="submit" value="Login" name="loginSubmit"><br>
                 <span>New to Utas?</span>
 
 

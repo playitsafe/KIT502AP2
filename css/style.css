@@ -247,12 +247,13 @@
         .invalid:before {
             position: relative;
             left: -30px;
-            content: "x";
+            content: "X";
         }
 
        #idselect {
             border-radius: 4px;
             height: 30px;
+            width: 30%;
         }
 
        #alertbox {
@@ -260,6 +261,7 @@
             position: relative;
             padding: 1px;
             font-size: 15px;
+            font-family: Arial;
             
         }
        label {
@@ -268,7 +270,8 @@
        }
 
        #checkmatch {
-        color: pink;
+        color: white;
+        font-family: Arial;
        }
 
      
