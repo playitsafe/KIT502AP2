@@ -21,10 +21,7 @@ if (isset($_POST['loginSubmit'])) {
 		if ($resultCheck < 1) {
 			echo "<script>alert('The user doesn\'t exist!');parent.location.href='index.php?login=error'</script>";
 		} elseif ($md5loginpassword !== $row['Password']) {
-			   echo "<script>alert('Wrong Password!');parent.location.href='index.php?login=error'</script>";
-			   
-
-
+			   echo "<script>alert('Wrong Password!');parent.location.href='index.php?login=error'</script>";			   
 			} else {
 				    $_SESSION['uid'] = $row['uid'];
                     $_SESSION['firstname'] = $row['FirstName'];

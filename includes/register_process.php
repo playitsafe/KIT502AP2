@@ -32,6 +32,7 @@ if (isset($_POST['register'])) {
 	$password = $mysqli->real_escape_string($_POST['password']);
 	$md5password = md5($password);
 	$uid = $_POST['idtype'] . $userid;
+
 	if (empty($firstname) || empty($lastname) || empty($userid) || empty($email) || empty($mobile) || empty($creditcrad) || empty($md5password) ) {
 		echo "<script>alert('All Fields need to be filled out!!');parent.location.href='../registration.php'</script>";
     	exit();
@@ -56,15 +57,29 @@ if (isset($_POST['register'])) {
 	    } elseif (!(($c1 && $c2 && $c3) && ($c4 || $c5 || $c6 || $c7))) {
 	    	echo "<script>alert('Invalid Password Format');parent.location.href='../registration.php'</script>";
 	    } else {
-	    	//insert data to DB
-	    	if ($_POST['idtype'] == 'US') {
-	    		$identity = 'student';
-	    	} elseif ($_POST['idtype'] == 'UE') {
+	    	$query = "SELECT * FROM users WHERE uid='$uid' OR Email='$email'";
+		    $result = $mysqli->query($query);
+            $resultCheck = $result->num_rows;
+		    $row = $result->fetch_assoc();
+            
+            if ($resultCheck>=1) {
+            	echo "<script>alert('UID or email existed! Try another one!');parent.location.href='../registration.php'</script>";
+            } else {
+            	//insert data to DB
+            	if ($_POST['idtype'] == 'US') {
+	    		$identity = 'Student';
+	    	   } elseif ($_POST['idtype'] == 'UE') {
                 $identity = 'Employee';
-	    	}
-	    	$query = "INSERT INTO users (uid, FirstName, LastName, Email, Mobile, CreditCard, Password, Identity) VALUES ('$uid', '$firstname', '$lastname', '$email', '$mobile', '$creditcrad', '$md5password', '$identity')";
-	    	$result = $mysqli->query($query);
-	    	header('Location: ../index.php');
+	    	   }
+
+	    	   $query = "INSERT INTO users (uid, FirstName, LastName, Email, Mobile, CreditCard, Password, Identity) VALUES ('$uid', '$firstname', '$lastname', '$email', '$mobile', '$creditcrad', '$md5password', '$identity')";
+	    	   $result = $mysqli->query($query);
+	    	   header('Location: ../index.php');
+             }
+
+	    	
+	    	
+	    	
 	    }
 
 	}
