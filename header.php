@@ -26,11 +26,11 @@
 
     <div id="navbar">
         <ul>
-            <li><a href="index.php">Home Page</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="Lazenby_Menu.php">Lazenbys Menu</a></li>
             <li><a href="Ref_Menu.php">The Ref Menu</a></li>
             <li><a href="tradetable_Menu.php">The Trade Table Menu</a></li>
-            <li><a href="Master_List.php">Master List for Admin</a></li>
+            
 
              <?php
             

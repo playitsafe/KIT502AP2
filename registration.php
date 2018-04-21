@@ -74,8 +74,8 @@
                 </table>
 
             
-            <input type="submit" id="send" name="register" value="Join in!">
-            <input type="reset" id="reset" value="Reset">
+            <input type="submit" style="width: 20%" id="send" name="register" value="Join in!">
+            <input type="reset" style="width: 20%" id="reset" value="Reset">
           </form>
           
         </div>

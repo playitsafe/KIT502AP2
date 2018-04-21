@@ -1,63 +1,54 @@
- <?php
-    include 'header.php';
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/style.css">
+    <script src="JQuery/jquery-3.3.1.js"></script>  
+</head>
+<body>
+<?php
+include 'header.php';
 
-    if (!isset($_SESSION['uid'])) {
-        echo "<script>alert('You haven\'t logged in! Plz login first!!');parent.location.href='login_page.php'</script>";
-    } else {
-       
-        $uid = $_SESSION['uid'];
-        $queryInfo = "SELECT * FROM users WHERE uid = '$uid'";
-        $getInfo = $mysqli->query($queryInfo);
-        $Info = $getInfo->fetch_assoc();
-        $firstname = $Info['FirstName'];
-        $lastname = $Info['LastName'];
-        $email = $Info['Email'];
-        $mobile = $Info['Mobile'];
-        $identity = $Info['Identity'];
-        $balance = $Info['Balance'];
+?>
 
+<h3>Here's the current arrangement of three Cafés </h3>
+<h3>Here's the current arrangement of three Cafés </h3>
+<h3>Here's the current arrangement of three Cafés </h3>
+<h3>Here's the current arrangement of three Cafés </h3>
+<h3>Here's the current arrangement of three Cafés </h3>
+<h3>Here's the current arrangement of three Cafés </h3>
 
-    }
-
- ?>
-
-
-
-<h2>Hi, <?php echo $firstname;?> | Here's your Information:</h2>
-<div id="updatebox">
-    <div id="innerupdatebox">
-        <form id="regiform" method="post" action="includes/account_update_process.php">
-                <table id="infotable">
+<div id="regibox">
+        <div id="reginput">
+            <form id="regiform" method="post" action="includes/register_process.php">
+                <table id="regitable">
                     <tr>
                         <th><label for="firstname">Firstname:</label></th>
                         <th><label for="lastname">Lastname:</label><br></th>
-                        <th>Your Account Balance is:</th>
                     </tr>
                     <tr>
-                        <td><input type="text" class="name" name="firstname" value="<?php echo $firstname; ?>"></td>
-                        <td><input type="text" class="name" name="lastname"  value="<?php echo $lastname; ?>"></td>
+                        <td><input type="text" class="name" name="firstname">*</td>
+                        <td><input type="text" class="name" name="lastname">*</td>
                     </tr>
                     <tr>
-                        <th>I am a</th>
-                        <th>My Student/Staff ID:</th>
-                        <th id=balance rowspan="3">$ <?php echo $balance; ?></th>
+                        <th>Identity</th>
+                        <th>Cafe Staff ID:</th>
                     </tr>
                     <tr>
-                        <td><select id="idselect" style="width: 34%" name="idtype" onchange="idPrefix()" disabled>
-                        <option><?php echo $identity;?></option>
+                        <td><select id="idselect" style="width: 55%" name="idtype" onchange="idPrefix()" disabled><option id="student" value="US">Cafe Staff</option>
+                        
                         </select></td>
-                        <td><input type="text" name="userid" style="width: 34%" id="userid" maxlength="4" disabled value="<?php echo $uid;?>"></td>
+                        <td><span id="idprefix">CM</span><input type="text" name="userid" style="width: 34%" id="userid" maxlength="4">*</td>
                     </tr>
                     <tr>
                         <th><label for="email">E-mail address:</label></th>
-                        <th><label for="mobile">Your Mobile Number:</label></th>
+                        <th><label for="mobile">Staff's Mobile Number:</label></th>
                     </tr>
                     <tr>
-                        <td><input type="text" id="email" name="email" style="width: 65%" value="<?php echo $email;?>"></td>
-                        <td><input type="text" id="mobile" name="mobile"  value="<?php echo $mobile;?>"></td>
+                        <td><input type="text" id="email" name="email"></td>
+                        <td><input type="text" id="mobile" name="mobile"></td>
                     </tr>
                     <tr>
-                        <th><label for="creditcrad">Your Credit Card Number:</label><br></th>
+                        <th></th>
                         <td rowspan="7">
                            <div id="alertbox">
                                <h4>Password must contain the following:</h4>
@@ -70,14 +61,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="text" id="creditcrad" name="creditcrad" value="<?php echo $_SESSION['creditcard'];?>"></td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <th><label for="password">Password:</label></th>
+                        <th><label for="password">Set Password for this account:</label></th>
                         
                     </tr>
                     <tr>
-                        <td><input type="password" id="password" name="password"></td>
+                        <td><input type="password" id="password" name="password">*</td>
                         
                     </tr>
                     <tr><th><div class="checkpwd" id="checkmatch"></div></th></tr>
@@ -85,20 +76,20 @@
                         <th><label for="password2">Confirm Password:</label></th>
                     </tr>
                     <tr>
-                        <td><input type="password" id="repassword" name="repassword"></td>
+                        <td><input type="password" id="repassword" name="repassword">*</td>
                     </tr>
-                    <tr>
-                        <td><input type="submit" id="update" name="update" value="Update Info" style="width: 70%"></td>
-                        <td><a href="staff_manage.php"><input type="button" value="Staff Management"></a>&nbsp;&nbsp;<a href="menu_manage.php"><input type="button" value="Menu Management"></a></td>
-                        <td><a href="top_up.php"><input type="button" id="topup" value="Top Up"></a></td>
 
-                    </tr>
-                </table>           
+                </table>
+
+            
+            <input type="submit" style="width: 20%" id="send" name="register" value="Join in!">
+            <input type="reset" style="width: 20%" id="reset" value="Reset">
           </form>
-    </div>
-</div>  
-  
-    
+          
+        </div>
+
+</div>
+
 <script>
         var myInput = document.getElementById("password");
         var letter = document.getElementById("letter");
@@ -201,9 +192,7 @@
         }
 
     </script>
-    
-    
-    
-    
 </body>
+
 </html>
+

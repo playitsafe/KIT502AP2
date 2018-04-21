@@ -157,11 +157,12 @@
         #reginput {
             /**padding: 3% 10% 20% 20%;**/
             font-size: 20px;
-            width: 80%;
-            margin-left: 18%;
-            margin-right: 18%;
+            width: 70%;
+            margin-left: 14%;
+            margin-right: 14%;
             background-color: #b2b2b2;
             padding: 2%;
+
 
         }
 
@@ -324,7 +325,11 @@
          cursor: pointer;
       }
 
-      input
+     
+
+      
+
+      
 
 
     </style>
