@@ -82,7 +82,7 @@ include 'header.php';
                 </table>
 
             
-            <input type="submit" style="width: 20%" id="send" name="register" value="Join in!">
+            <input type="submit" style="width: 20%" id="send" name="register" value="Add New Staff">
             <input type="reset" style="width: 20%" id="reset" value="Reset">
           </form>
           
