@@ -12,10 +12,10 @@ include "header.php";
 	<label>Your Credit Card Details:</label><br>
 	<input type="input" name="creditno"><br>
 	<label>Valid Till</label>
-	<input type="number" name="creditMonth" placeholder="MM">&nbsp;&nbsp;<b>/</b>&nbsp;&nbsp;
-	<input type="number" name="creditYear" placeholder="YY"><br>
+	<input type="input" name="creditMonth" placeholder="MM">&nbsp;&nbsp;<b>/</b>&nbsp;&nbsp;
+	<input type="input" name="creditYear" placeholder="YY">&nbsp;&nbsp;( * Format Example: 06 / 18 as June 2018)</span><br>
 	<label >CVV Code</label>
-	<input type="number" name="cvv" maxlength="3"><br>
+	<input type="input" name="cvv" maxlength="3"><span>&nbsp;&nbsp;( * Input 3 digits)</span><br>
 	<input type="submit" name="topup" style="width: 10%">
 	<input type="reset" name="reset" style="width: 10%">
 

@@ -4,7 +4,7 @@
  ?>
 
 
-<h2>Hi, <?php echo $_SESSION['firstname'];?> | Here's your Information:</h2>
+<h2>Hi, <?php echo '<i>'.$_SESSION['firstname'].'</i>';?> | Here's your Information:</h2>
 <div>
     <div>
         <form id="regiform" method="post" action="includes/register_process.php">
@@ -21,7 +21,7 @@
                     <tr>
                         <th>I am a</th>
                         <th>My Student/Staff ID:</th>
-                        <th id=balance rowspan="3">$ 40.00</th>
+                        <th id=balance rowspan="3">$ <?php echo $_SESSION['balance']; ?></th>
                     </tr>
                     <tr>
                         <td><select id="idselect" style="width: 34%" name="idtype" onchange="idPrefix()"><option id="student" value="US">Student</option>
@@ -71,7 +71,7 @@
                     <tr>
                         <td><input type="submit" id="update" name="update" value="Update My Info" style="width: 50%"></td>
                         <td></td>
-                        <td><input type="button" id="topup" value="Top Up Account" style="width: 50%"></td>
+                        <td><a href="top_up.php"><input type="button" id="topup" value="Top Up Account"></a></td>
 
                     </tr>
 

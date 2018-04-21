@@ -35,8 +35,8 @@
             
             if (isset($_SESSION['uid'])) {
                 echo '<li style="float: right"><a href="includes/logout_process.php?link=logout">Log Out</a></li><li style="float: right" id="loginbtn">
-                      <a>My Account Detail</a></li>
-                      <li style="float: right"><a>Welcome, '.$_SESSION['firstname'] . '</a></li>
+                      <a href="users_account_page.php">My Account Detail</a></li>
+                      <li style="float: right"><a>Welcome, <b>'.$_SESSION['firstname'] . '<b></a></li>
                       <li></li></ul></div>                   
                      ';
 
@@ -47,7 +47,7 @@
                 </div>
                 <div id="loginbox">
                     <div id="loginput">
-                         <form id="loginform" method="post" action="login_process.php">
+                         <form id="loginform" method="post" action="includes/login_process.php">
                             <label for="username">Username</label><br>
                 <input type="text" id="username" name="username" placeholder="Your E-mail / UID"><br><br>
                             <label for="password">Password</label><br>

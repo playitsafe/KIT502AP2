@@ -32,7 +32,7 @@
 
 
                     <div id="mainLoginput">
-                         <form id="loginform" method="post" action="login_process.php">
+                         <form id="loginform" method="post" action="includes/login_process.php">
                             <label for="username">Username</label><br>
                 <input type="text" id="username" name="username" placeholder="Your E-mail / UID"><br><br>
                             <label for="password">Password</label><br>

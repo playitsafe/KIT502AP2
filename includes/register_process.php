@@ -1,6 +1,6 @@
 <?php
 
-include ('db_conn.php');
+include 'db_conn.php';
 
 $checkExist = $mysqli->query("SELECT id FROM users");
 
@@ -15,7 +15,7 @@ if (empty($checkExist)) {
 	             `CreditCard` int(16) NOT NULL,
 	             `Password` varchar(50) NOT NULL,
 	             `Identity` varchar(11) NOT NULL,
-	             `Balance` varchar(11) NOT NULL,
+	             `Balance` DECIMAL(8,2) NOT NULL DEFAULT '0.00',
 	             PRIMARY KEY (`id`)
 	             )" ;
 	$result = $mysqli->query($query);

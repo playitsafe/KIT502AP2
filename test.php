@@ -1,7 +1,6 @@
 <?php
-$str = "00";
-if (empty($str)) {
-	echo "0=empty";
-} else {
-	echo "0!=empty";
-}
+$str = "0.66";
+$str1 = "3.34";
+//if ($str>="1") {
+	echo $str+$str1;
+

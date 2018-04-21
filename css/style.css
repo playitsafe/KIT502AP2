@@ -318,5 +318,13 @@
         width: 8%
       }
 
+      input[id="topup"] {
+
+         width: 50%;
+         cursor: pointer;
+      }
+
+      input
+
 
     </style>
