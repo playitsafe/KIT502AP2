@@ -10,7 +10,7 @@ if (isset($_POST['loginSubmit'])) {
     $md5loginpassword = md5($_POST['loginPassword']);
 
 	if (empty($loginId) || empty($_POST['loginPassword'])) {
-		echo "<script>alert('All fields must fill out!!');parent.location.href='index.php?login=empty'</script>";
+		echo "<script>alert('All fields must fill out!!');parent.location.href='login_page.php?login=empty'</script>";
 	} else {
 		$query = "SELECT * FROM users WHERE uid='$loginId' OR Email='$loginId'";
 		$result = $mysqli->query($query);
@@ -19,9 +19,9 @@ if (isset($_POST['loginSubmit'])) {
 		//$p = $row['Password'];
 
 		if ($resultCheck < 1) {
-			echo "<script>alert('The user doesn\'t exist!');parent.location.href='index.php?login=error'</script>";
+			echo "<script>alert('The user doesn\'t exist!');parent.location.href='login_page.php?login=error'</script>";
 		} elseif ($md5loginpassword !== $row['Password']) {
-			   echo "<script>alert('Wrong Password!');parent.location.href='index.php?login=error'</script>";			   
+			   echo "<script>alert('Wrong Password!');parent.location.href='login_page.php?login=error'</script>";			   
 			} else {
 				    $_SESSION['uid'] = $row['uid'];
                     $_SESSION['firstname'] = $row['FirstName'];

@@ -74,16 +74,11 @@ if (isset($_POST['register'])) {
 
 	    	   $query = "INSERT INTO users (uid, FirstName, LastName, Email, Mobile, CreditCard, Password, Identity) VALUES ('$uid', '$firstname', '$lastname', '$email', '$mobile', '$creditcrad', '$md5password', '$identity')";
 	    	   $result = $mysqli->query($query);
-	    	   header('Location: ../index.php');
+	    	   echo "<script>alert('Sign Up Successful! Please login!');parent.location.href='../login_page.php'</script>";
              }
-
-	    	
-	    	
 	    	
 	    }
 
 	}
 }//This is end of if issetpost
 
-//
-    //

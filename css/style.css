@@ -141,6 +141,7 @@
             opacity: 0.65;
         }
 
+
         /**#regibox {
         	width: 60%;
         	margin-left: 25%;
@@ -156,7 +157,7 @@
         #reginput {
             /**padding: 3% 10% 20% 20%;**/
             font-size: 20px;
-            width: 60%;
+            width: 80%;
             margin-left: 18%;
             margin-right: 18%;
             background-color: #b2b2b2;
@@ -171,12 +172,23 @@
         #regitable {
             width: 80%;
             float: center;
+
         }
+
+        #infotable {
+            width: 80%;
+            float: center;
+            margin: 10% 15% 15% 10%;
+        }
+
+        
+
+        
 
         #regiform input[type="text"],
         #regiform input[type="email"],
         #regiform input[type="password"] {
-            width: 40%;
+            width: 55%;
             padding: 3px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -188,7 +200,7 @@
         
 
         #regiform input {
-            width: 15%;
+            width: 55%;
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -203,7 +215,7 @@
         }
 /*========================*/
         input {
-            width: 100%;
+            /**width: 100%;**/
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -213,7 +225,7 @@
         }
 
         #idselect {
-            width:30%;
+            width:40%;
             height: 10%;
             font-size: 20px
         }
@@ -224,11 +236,17 @@
             
         }
 
-       #send:hover, #gohome:hover, #reset:hover {
+       #send:hover, #gohome:hover, #reset:hover, #update:hover, #topup:hover {
         	background-color: red;
             color: black;
             opacity: 0.8;
         }
+
+        #topup {
+            width: 50%;
+        }
+
+
 
         .valid {
             color: green;
@@ -253,7 +271,7 @@
        #idselect {
             border-radius: 4px;
             height: 30px;
-            width: 30%;
+            width: 50%;
         }
 
        #alertbox {
@@ -274,6 +292,31 @@
         font-family: Arial;
        }
 
-     
+       #mainLoginput {
+        margin: 5% 25% 10% 25%;
+        position: center;
+        
+       }
+
+     #update {
+            width: 50%;
+        }
+
+      #balance {
+        font-size: 40px;
+      }
+
+      input[name="creditno"] {
+        width: 35%
+      }
+
+      input[name="cvv"] {
+        width: 8%
+      }
+
+      input[name="cvv"], input[name="creditYear"], input[name="creditMonth"] {
+        width: 8%
+      }
+
 
     </style>
