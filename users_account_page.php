@@ -1,13 +1,32 @@
  <?php
     include 'header.php';
 
+    if (!isset($_SESSION['uid'])) {
+        echo "<script>alert('You haven\'t logged in! Plz login first!!');parent.location.href='login_page.php'</script>";
+    } else {
+       
+        $uid = $_SESSION['uid'];
+        $queryInfo = "SELECT * FROM users WHERE uid = '$uid'";
+        $getInfo = $mysqli->query($queryInfo);
+        $Info = $getInfo->fetch_assoc();
+        $firstname = $Info['FirstName'];
+        $lastname = $Info['LastName'];
+        $email = $Info['Email'];
+        $mobile = $Info['Mobile'];
+        $identity = $Info['Identity'];
+        $balance = $Info['Balance'];
+
+
+    }
+
  ?>
 
 
-<h2>Hi, <?php echo '<i>'.$_SESSION['firstname'].'</i>';?> | Here's your Information:</h2>
+
+<h2>Hi, <?php echo $firstname;?> | Here's your Information:</h2>
 <div>
     <div>
-        <form id="regiform" method="post" action="includes/register_process.php">
+        <form id="regiform" method="post" action="includes/account_update_process.php">
                 <table id="infotable">
                     <tr>
                         <th><label for="firstname">Firstname:</label></th>
@@ -15,27 +34,27 @@
                         <th>Your Account Balance is:</th>
                     </tr>
                     <tr>
-                        <td><input type="text" class="name" name="firstname"></td>
-                        <td><input type="text" class="name" name="lastname"></td>
+                        <td><input type="text" class="name" name="firstname" value="<?php echo $firstname; ?>"></td>
+                        <td><input type="text" class="name" name="lastname"  value="<?php echo $lastname; ?>"></td>
                     </tr>
                     <tr>
                         <th>I am a</th>
                         <th>My Student/Staff ID:</th>
-                        <th id=balance rowspan="3">$ <?php echo $_SESSION['balance']; ?></th>
+                        <th id=balance rowspan="3">$ <?php echo $balance; ?></th>
                     </tr>
                     <tr>
-                        <td><select id="idselect" style="width: 34%" name="idtype" onchange="idPrefix()"><option id="student" value="US">Student</option>
-                        <option id="staff" value="UE">Staff</option>
+                        <td><select id="idselect" style="width: 34%" name="idtype" onchange="idPrefix()" disabled>
+                        <option><?php echo $identity;?></option>
                         </select></td>
-                        <td><span id="idprefix">US</span><input type="text" name="userid" style="width: 34%" id="userid" maxlength="4"></td>
+                        <td><input type="text" name="userid" style="width: 34%" id="userid" maxlength="4" disabled value="<?php echo $uid;?>"></td>
                     </tr>
                     <tr>
                         <th><label for="email">E-mail address:</label></th>
                         <th><label for="mobile">Your Mobile Number:</label></th>
                     </tr>
                     <tr>
-                        <td><input type="text" id="email" name="email" style="width: 65%"></td>
-                        <td><input type="text" id="mobile" name="mobile"></td>
+                        <td><input type="text" id="email" name="email" style="width: 65%" value="<?php echo $email;?>"></td>
+                        <td><input type="text" id="mobile" name="mobile"  value="<?php echo $mobile;?>"></td>
                     </tr>
                     <tr>
                         <th><label for="creditcrad">Your Credit Card Number:</label><br></th>
@@ -51,7 +70,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input value="3245" type="text" id="creditcrad" name="creditcrad"></td>
+                        <td><input type="text" id="creditcrad" name="creditcrad" value="<?php echo $_SESSION['creditcard'];?>"></td>
                     </tr>
                     <tr>
                         <th><label for="password">Password:</label></th>

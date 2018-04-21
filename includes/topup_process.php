@@ -33,10 +33,12 @@ if (!isset($_SESSION['uid'])) {
 
 			$query = "UPDATE users SET Balance = '$totalAmount' WHERE uid = '$uid'";
             $mysqli->query($query);
+            /*
             $queryNewBalance = "SELECT Balance FROM users WHERE uid = '$uid'";
             $getNewBalance = $mysqli->query($queryNewBalance);
             $NewBalance = $getNewBalance->fetch_assoc()['Balance'];
             $_SESSION['balance'] = $NewBalance;
+            */
             echo "<script>alert('Top up Successfully!!');parent.location.href='../users_account_page.php'</script>";
 
 		} //end of insert SQL clause

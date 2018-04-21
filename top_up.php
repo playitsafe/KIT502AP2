@@ -1,6 +1,11 @@
 <?php
 include "header.php";
-?>
+
+if (!isset($_SESSION['uid'])) {
+        echo "<script>alert('You haven\'t logged in! Plz login first!!');parent.location.href='login_page.php'</script>";
+    }
+
+ ?>
 
 <h3>Please put through your Credit Card Details to Top-Up your Account:</h3>
 
