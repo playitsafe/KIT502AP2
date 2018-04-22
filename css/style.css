@@ -165,9 +165,9 @@
 
 
         }
-
+        
         #regitable, tr, th, td {
-            text-align: left;            
+            text-align: left;           
         }
 
         #regitable {
@@ -324,8 +324,23 @@
          width: 50%;
          cursor: pointer;
       }
+      
+      .staff {
+        
+        text-align: center;
+        border: black solid 1px;
+        width: 74%;
+        
+        margin-left: 14%;
 
-     
+      }
+
+      .masterinfo {
+        width: 74%;
+        margin-left: 14%;
+        
+      }
+
 
       
 

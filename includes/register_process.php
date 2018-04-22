@@ -15,6 +15,7 @@ if (empty($checkExist)) {
 	             `CreditCard` int(16) NOT NULL,
 	             `Password` varchar(50) NOT NULL,
 	             `Identity` varchar(11) NOT NULL,
+	             `RoleTag` varchar(11) NOT NULL DEFAULT 'Customer',
 	             `Balance` DECIMAL(8,2) NOT NULL DEFAULT '0.00',
 	             PRIMARY KEY (`id`)
 	             )" ;

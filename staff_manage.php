@@ -11,14 +11,94 @@ include 'header.php';
 ?>
 
 <h3>Here's the current arrangement of three Cafés </h3>
-<h3>Here's the current arrangement of three Cafés </h3>
-<h3>Here's the current arrangement of three Cafés </h3>
-<h3>Here's the current arrangement of three Cafés </h3>
-<h3>Here's the current arrangement of three Cafés </h3>
-<h3>Here's the current arrangement of three Cafés </h3>
+<table  class="staff">
+	<tr>
+		<th></th>
+		<th>Lazenbys</th>
+		<th>The Ref</th>
+		<th>The Trade Table</th>
+	</tr>
+	<tr>
+		<th>Cafe Manager</th>
+		<td>Xxxx(CM1111)</td>
+		<td>Yyyyy(CM2222)</td>
+		<td>Zzzzz(CM3333)</td>
+	</tr>
+	<tr>
+		<th>Cafe Staff</th>
+		<td>Xxxx(CM1111)</td>
+		<td>Yyyyy(CM2222)</td>
+		<td>Zzzzz(CM3333)</td>
+	</tr>
+	<tr>
+		<th>Cafe Staff</th>
+		<td></td>
+		<td>Yyyyy(CM2222)</td>
+		<td>Zzzzz(CM3333)</td>
+	</tr>
+	<tr>
+		<th>Cafe Staff</th>
+		<td>Xxxx(CM1111)</td>
+		<td></td>
+		<td>Zzzzz(CM3333)</td>
+	</tr>
+</table>
+<div class="masterinfo">You must allocate a Manager for EACH Cafe!</div>
+<div class="masterinfo"></div>
+<div>
+    All your employees are shown as below:
+</div>
+<div id="showStaff">
+	<table class="staff">
+		<tr>
+		<th>UID</th>
+		<th>Name</th>
+		<th>The Ref</th>
+		<th>Position</th>
+	</tr>
+	<tr>
+		<th>Cafe Manager</th>
+		<td>Xxxx(CM1111)</td>
+		<td>Yyyyy(CM2222)</td>
+		<td>Zzzzz(CM3333)</td>
+	</tr>
+	</table>	
+</div>
+
+<div>
+	You can allocate your staff to your Cafes:
+	<form method="post" action="includes/allocate_process.php">
+		<table>
+			<tr>
+				<th>Choose Cafe:</th>
+			</tr>
+			<tr>
+				<td>
+					<select id="allocateList">
+                    <option>Lazenby Manager</option>
+                    <option>Ref Manager</option>
+                    <option>TraTable Manager</option>
+                    <option>Lazenby Staff</option>
+                    <option>Ref Staff</option>
+                    <option>TraTable Staff</option></select>
+				</td>
+				<td><input type="text" name="allocateUid" placeholder="uid"></td>
+				<td><input type="submit" name="submitAllocate"></td>
+		</form>
+	    <form method="post" action="includes/userdelete_process.php">
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="text" name="deleteUser" placeholder="uid"></td>
+				<td><input type="submit" name="submitDelete"></td>
+			</tr>
+		</table>
+	    </form>
+</div>
 
 <div id="regibox">
         <div id="reginput">
+        	<h3>Create New Staff Account:</h3>
             <form id="regiform" method="post" action="includes/register_process.php">
                 <table id="regitable">
                     <tr>
@@ -49,7 +129,7 @@ include 'header.php';
                     </tr>
                     <tr>
                         <th></th>
-                        <td rowspan="7">
+                        <td rowspan="9">
                            <div id="alertbox">
                                <h4>Password must contain the following:</h4>
                                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
@@ -78,11 +158,25 @@ include 'header.php';
                     <tr>
                         <td><input type="password" id="repassword" name="repassword">*</td>
                     </tr>
+                    <tr>
+                    	<th>Allocate Role: </th>
+                    </tr>
+                    <tr>
+                    	<td><select id="idselect">
+                    		<option>Unallocated</option>
+                    		<option>Lazenby Manager</option>
+                    		<option>Ref Manager</option>
+                    		<option>TraTable Manager</option>
+                    		<option>Lazenby Staff</option>
+                    		<option>Ref Staff</option>
+                    		<option>TraTable Staff</option></select>
+                    	</td>
+                    </tr>
 
                 </table>
 
             
-            <input type="submit" style="width: 20%" id="send" name="register" value="Add New Staff">
+            <input type="submit" style="width: 20%" id="send" name="register" value="+ New Staff">
             <input type="reset" style="width: 20%" id="reset" value="Reset">
           </form>
           
