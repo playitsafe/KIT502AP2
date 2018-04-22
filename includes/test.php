@@ -2,9 +2,9 @@
 
 include 'db_conn.php';
 
-$queryNewBalance = "SELECT Balance FROM users WHERE uid = 'US1111'";
-$result=$mysqli->query($queryNewBalance);
-$row = $result->fetch_assoc()['Balance'];
+$query = "SELECT * FROM users1 WHERE uid = '11'";
+$result=$mysqli->query($query);
+$row = $result->fetch_assoc()['CreditCard'];
 var_dump($row);
 
 /*

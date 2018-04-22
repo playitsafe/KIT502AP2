@@ -23,13 +23,13 @@ if (empty($checkExist)) {
 }
 
 
-if (isset($_POST['register'])) {
+if (isset($_POST['create'])) {
 	$firstname = $mysqli->real_escape_string($_POST['firstname']);
 	$lastname = $mysqli->real_escape_string($_POST['lastname']);	
 	$userid = $mysqli->real_escape_string($_POST['userid']);
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);	
 	$mobile = $mysqli->real_escape_string($_POST['mobile']);
-	$creditcrad = $mysqli->real_escape_string($_POST['creditcrad']);
+	
 	$password = $mysqli->real_escape_string($_POST['password']);
 	$md5password = md5($password);
 	$uid = $_POST['idtype'] . $userid;
@@ -82,4 +82,3 @@ if (isset($_POST['register'])) {
 
 	}
 }//This is end of if issetpost
-

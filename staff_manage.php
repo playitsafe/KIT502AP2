@@ -99,7 +99,7 @@ include 'header.php';
 <div id="regibox">
         <div id="reginput">
         	<h3>Create New Staff Account:</h3>
-            <form id="regiform" method="post" action="includes/register_process.php">
+            <form id="regiform" method="post" action="includes/create_staff_process.php">
                 <table id="regitable">
                     <tr>
                         <th><label for="firstname">Firstname:</label></th>
@@ -176,7 +176,7 @@ include 'header.php';
                 </table>
 
             
-            <input type="submit" style="width: 20%" id="send" name="register" value="+ New Staff">
+            <input type="submit" style="width: 20%" id="send" name="create" value="+ New Staff">
             <input type="reset" style="width: 20%" id="reset" value="Reset">
           </form>
           
