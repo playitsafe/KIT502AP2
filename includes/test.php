@@ -1,11 +1,24 @@
 <?php
 
+
+$str = "abcd1111";
+$str1 = substr($str, 0, 2);
+
+echo "$str1";
+
+/*
 include 'db_conn.php';
 
-$query = "SELECT * FROM users1 WHERE uid = '11'";
-$result=$mysqli->query($query);
-$row = $result->fetch_assoc()['CreditCard'];
-var_dump($row);
+
+
+$checkShopTeam = $mysqli->query("SELECT id FROM lazenby");
+if (empty($checkShopTeam)) {
+	echo "empty";
+
+} else {
+	echo "nono";
+}
+*/
 
 /*
 include 'db_conn.php';

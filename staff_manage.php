@@ -66,7 +66,9 @@ include 'header.php';
 </div>
 
 <div>
-	You can allocate your staff to your Cafes:
+	You can allocate your staff to your Cafes:<br>
+    Note: Your NEW allocated Manager will replace the existed Manager.<br>
+    The Previous manager will still work as Staff in the shop.<br>
 	<form method="post" action="includes/allocate_process.php">
 		<table>
 			<tr>
@@ -74,23 +76,25 @@ include 'header.php';
 			</tr>
 			<tr>
 				<td>
-					<select id="allocateList">
-                    <option>Lazenby Manager</option>
-                    <option>Ref Manager</option>
-                    <option>TraTable Manager</option>
-                    <option>Lazenby Staff</option>
-                    <option>Ref Staff</option>
-                    <option>TraTable Staff</option></select>
+					<select id="shopList" name="shopList">
+                        <option value="LazenbyTeam">Lazenby</option>
+                        <option value="RefTeam">Ref</option>
+                        <option value="TradeTableTeam">TradeTable Manager</option>
+                    </select>
+                    <select id="roleList" name="roleList">
+                    	<option value="Manager">Manager</option>
+                    	<option value="Staff">Staff</option>
+                    </select>
 				</td>
-				<td><input type="text" name="allocateUid" placeholder="uid"></td>
-				<td><input type="submit" name="submitAllocate"></td>
+				<td><input type="text" name="allocateUid" placeholder="uid" onkeyup="this.value = this.value.toUpperCase();" maxlength="6"></td>
+				<td><input type="submit" name="submitAllocate" value="Allocate"></td>
 		</form>
-	    <form method="post" action="includes/userdelete_process.php">
+	    <form method="post" action="includes/allocate_process.php">
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="text" name="deleteUser" placeholder="uid"></td>
-				<td><input type="submit" name="submitDelete"></td>
+				<td><input type="text" name="deleteUser" placeholder="uid" onkeyup="this.value = this.value.toUpperCase();" maxlength="6"></td>
+				<td><input type="submit" name="submitDelete" value="Delete"></td>
 			</tr>
 		</table>
 	    </form>
@@ -114,7 +118,7 @@ include 'header.php';
                         <th>Cafe Staff ID:</th>
                     </tr>
                     <tr>
-                        <td><select id="idselect" style="width: 55%" name="idtype" onchange="idPrefix()" disabled><option id="student" value="US">Cafe Staff</option>
+                        <td><select id="idselect" style="width: 55%" name="idtype" onchange="idPrefix()" disabled><option id="student" value="CM">Cafe Staff</option>
                         
                         </select></td>
                         <td><span id="idprefix">CM</span><input type="text" name="userid" style="width: 34%" id="userid" maxlength="4">*</td>
@@ -158,20 +162,7 @@ include 'header.php';
                     <tr>
                         <td><input type="password" id="repassword" name="repassword">*</td>
                     </tr>
-                    <tr>
-                    	<th>Allocate Role: </th>
-                    </tr>
-                    <tr>
-                    	<td><select id="idselect">
-                    		<option>Unallocated</option>
-                    		<option>Lazenby Manager</option>
-                    		<option>Ref Manager</option>
-                    		<option>TraTable Manager</option>
-                    		<option>Lazenby Staff</option>
-                    		<option>Ref Staff</option>
-                    		<option>TraTable Staff</option></select>
-                    	</td>
-                    </tr>
+                    
 
                 </table>
 

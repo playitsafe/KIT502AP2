@@ -13,6 +13,7 @@
         $lastname = $Info['LastName'];
         $email = $Info['Email'];
         $mobile = $Info['Mobile'];
+        $creditcrad = $Info['CreditCard'];
         $identity = $Info['Identity'];
         $balance = $Info['Balance'];
 
@@ -70,7 +71,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="text" id="creditcrad" name="creditcrad" value="<?php echo $_SESSION['creditcard'];?>"></td>
+                        <td><input type="text" id="creditcrad" name="creditcrad" value="<?php echo $creditcrad;?>"></td>
                     </tr>
                     <tr>
                         <th><label for="password">Password:</label></th>

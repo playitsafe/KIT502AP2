@@ -85,7 +85,7 @@ if (isset($_POST['submitAllocate'])) {
             if ($_POST['roleList']=='Manager') { //if select to allocate manager
             	
             	$query2 = "SELECT * FROM $shopname WHERE Role='Manager'";
-	            $result2 = $mysqli->query($query2);
+	            $result2 = $mysqli->query($query);
                 $resultCheck2 = $result2->num_rows;
 		        $row2 = $result2->fetch_assoc();
 
@@ -108,37 +108,3 @@ if (isset($_POST['submitAllocate'])) {
 	    }//end of user existed in users condition
 	}//end of if empty input
 } //end of if POST button
-
-if ($_POST['submitDelete']) {
-
-	$deleteUid = $mysqli->real_escape_string($_POST['deleteUser']);
-
-	if (empty($deleteUid)) {
-		echo "<script>alert('Please input an uid!!');parent.location.href='../staff_manage.php'</script>";
-	} else {
-		$query_a = "SELECT * FROM LazenbyTeam WHERE uid='$deleteUid'";
-	    $result_a = $mysqli->query($query_a);
-	    $resultCheck_a = $result_a->num_rows;
-
-	    $query_b = "SELECT * FROM RefTeam WHERE uid='$deleteUid'";
-	    $result_b = $mysqli->query($query_b);
-	    $resultCheck_b = $result_b->num_rows;
-
-	    $query_c = "SELECT * FROM TradeTableTeam WHERE uid='$deleteUid'";
-	    $result_c = $mysqli->query($query_c);
-	    $resultCheck_c = $result_c->num_rows;
-
-	    if ($resultCheck_a >= 1) { //Clear if existed
-            	$mysqli->query("DELETE FROM LazenbyTeam WHERE uid='$deleteUid'");
-            	echo "<script>alert('Staff removed successfully!!');parent.location.href='../staff_manage.php'</script>";
-            } elseif ($resultCheck_b >= 1) {
-            	$mysqli->query("DELETE FROM RefTeam WHERE uid='$deleteUid'");
-            	echo "<script>alert('Staff is not in any shop!');parent.location.href='../staff_manage.php'</script>";
-            } elseif ($resultCheck_c >= 1) {
-            	$mysqli->query("DELETE FROM TradeTableTeam WHERE uid='$deleteUid'");
-            	echo "<script>alert('Staff removed successfully!!!');parent.location.href='../staff_manage.php'</script>";
-            } else {
-            	echo "<script>alert('Staff is not in any shop!');parent.location.href='../staff_manage.php'</script>";
-            }
-	}
-}
