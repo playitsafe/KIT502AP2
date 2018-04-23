@@ -1,10 +1,22 @@
 <?php
 
 
-$str = "abcd1111";
-$str1 = substr($str, 0, 2);
+include('db_conn.php'); 
 
-echo "$str1";
+
+$query = "SELECT * FROM LazenbyTeam WHERE Role='Manager'";
+$result = $mysqli->query($query);
+$row = $result->fetch_array(MYSQLI_ASSOC);
+$row1 = $result->fetch_assoc();
+$str = $row['uid'];
+//$str1 = $row1['uid'];
+var_dump($row);echo "<br>";
+//var_dump($row1);echo "<br>";
+var_dump($str);echo "<br>";
+//var_dump($str1);echo "<br>";
+
+
+
 
 /*
 include 'db_conn.php';
