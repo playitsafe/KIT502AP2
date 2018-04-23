@@ -33,7 +33,7 @@ if (isset($_POST['create'])) {
 	$md5password = md5($password);
 	$uid = "CM" . $userid;
 	$identity = 'CafeStaff';
-	$roleset = $_POST['roleset'];
+	$roleset = 'Staff';
 
 	if (empty($firstname) || empty($lastname) || empty($userid) || empty($md5password) ) {
 		echo "<script>alert('Please fill out fields with *');parent.location.href='../staff_manage.php'</script>";
