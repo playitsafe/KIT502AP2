@@ -37,7 +37,7 @@
             if (isset($_SESSION['uid'])) {
                 echo '<li style="float: right"><a href="includes/logout_process.php?link=logout">Log Out</a></li><li style="float: right" id="loginbtn">
                       <a href="users_account_page.php">My Account Detail</a></li>
-                      <li style="float: right"><a>Welcome, <b>'.$_SESSION['firstname'] . '<b></a></li>
+                      <li style="float: right"><a>Welcome, '.$_SESSION['firstname'] . '</a></li>
                       <li></li></ul></div>                   
                      ';
 

@@ -8,14 +8,14 @@ if (empty($checkExist)) {
 	$query = "CREATE TABLE `users` (
 	             `id` int(6) NOT NULL AUTO_INCREMENT,
 	             `uid` varchar(10) NOT NULL,
-	             `FirstName` varchar(11) NOT NULL,
-	             `LastName` varchar(11) NOT NULL,
+	             `FirstName` varchar(20) NOT NULL,
+	             `LastName` varchar(20) NOT NULL,
 	             `Email` varchar(50) NOT NULL,
 	             `Mobile` varchar(10) NOT NULL DEFAULT '',
 	             `CreditCard` varchar(16) NOT NULL DEFAULT '',
 	             `Password` varchar(50) NOT NULL,
 	             `Identity` varchar(11) NOT NULL,
-	             `RoleTag` varchar(11) NOT NULL DEFAULT 'Customer',
+	             `RoleTag` varchar(20) NOT NULL DEFAULT 'Customer',
 	             `Balance` DECIMAL(8,2) NOT NULL DEFAULT '0.00',
 	             PRIMARY KEY (`id`)
 	             )" ;

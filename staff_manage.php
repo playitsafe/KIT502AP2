@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="css/style.css">
-    <script src="JQuery/jquery-3.3.1.js"></script>  
-</head>
-<body>
+
 <?php
 include 'header.php';
+//session_start();
+if (!isset($_SESSION['uid'])) {
+    echo "<script>alert('You haven\'t login!!Please login to proceed!');parent.location.href='login_page.php'</script>";
+} elseif ($_SESSION['uid']!=="DB1111") {
+    echo "<script>alert('You are not Master!!Go Back!');parent.location.href='users_account_page.php'</script>";
+}
 
 ?>
 
@@ -72,17 +72,23 @@ include 'header.php';
 	<table class="staff">
 	<tr>
 		<th>UID</th>
-		<th>Name</th>		
+		<th>Name</th>
+        <th>Allocate Status</th>		
 	</tr>
     <?php
       include 'includes/db_conn.php';
-      $result = $mysqli->query(SELECT * FROM)
-	<tr>
-		<th>Cafe Manager</th>
-		<td>Xxxx(CM1111)</td>
-		<td>Yyyyy(CM2222)</td>
-		<td>Zzzzz(CM3333)</td>
-	</tr>
+      $result = $mysqli->query("SELECT uid, CONCAT(FirstName, ' ', LastName) AS FullName, RoleTag FROM users WHERE Identity='CafeStaff'");
+      while ($row = $result->fetch_assoc()) {
+          echo "
+        <tr>
+           <td>".$row['uid']."</td>
+           <td>".$row['FullName']."</td>
+           <td>".$row['RoleTag']."</td>
+        </tr>
+          ";
+      }
+    ?>
+	
 	</table>	
 </div>
 
