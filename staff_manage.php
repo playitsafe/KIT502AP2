@@ -22,34 +22,47 @@ include 'header.php';
 		<th>Cafe Manager</th>
 		<td><?php
             include 'includes/db_conn.php';
-            $managerL=$mysqli->query("SELECT * FROM LazenbyTeam WHERE Role='Manager'")->fetch_assoc()['Name'];
-            $managerR=$mysqli->query("SELECT * FROM RefTeam WHERE Role='Manager'")->fetch_assoc()['Name']; 
-            $managerT=$mysqli->query("SELECT * FROM TradeTableTeam WHERE Role='Manager'")->fetch_assoc()['Name'];             
+            $managerL=$mysqli->query("SELECT CONCAT(Name, '(',uid, ')') AS NameUid FROM LazenbyTeam WHERE Role='Manager'")->fetch_assoc()['NameUid'];
+            $managerR=$mysqli->query("SELECT CONCAT(Name, '(',uid, ')') AS NameUid FROM RefTeam WHERE Role='Manager'")->fetch_assoc()['NameUid']; 
+            $managerT=$mysqli->query("SELECT CONCAT(Name, '(',uid, ')') AS NameUid FROM TradeTableTeam WHERE Role='Manager'")->fetch_assoc()['NameUid'];             
             echo $managerL . "</td><td>" . $managerR . "</td><td>" . $managerT . "</td></tr>" ;
          ?>
 	<?php
-       include 'includes/db_conn.php';
-       $rowL = $mysqli->query("SELECT * FROM LazenbyTeam WHERE Role='Staff'")->fetch_assoc();
-     ?>		
-	<tr>
-		<th>Cafe Staff</th>
-		<td>Xxxx(CM1111)</td>
-		<td>Yyyyy(CM2222)</td>
-		<td>Zzzzz(CM3333)</td>
-	</tr>
-	<tr>
-		<th>Cafe Staff</th>
-		<td></td>
-		<td>Yyyyy(CM2222)</td>
-		<td>Zzzzz(CM3333)</td>
-	</tr>
-	<tr>
-		<th>Cafe Staff</th>
-		<td>Xxxx(CM1111)</td>
-		<td></td>
-		<td>Zzzzz(CM3333)</td>
-	</tr>
+       include 'includes/db_conn.php';error_reporting(0);
+       $query1 = "SELECT CONCAT(Name, '(',uid, ')') AS NameUid FROM lazenbyteam WHERE Role='Staff'";
+       $result1 = $mysqli->query($query1);
+       $query2 = "SELECT CONCAT(Name, '(',uid, ')') AS NameUid FROM refteam WHERE Role='Staff'";
+       $result2 = $mysqli->query($query2);
+       $query3 = "SELECT CONCAT(Name, '(',uid, ')') AS NameUid FROM tradetableteam WHERE Role='Staff'";
+       $result3 = $mysqli->query($query3);
+       $staffNameL = array();
+       $staffNameR = array();
+       $staffNameT = array();
+       $longestArray = array();
+
+       while ($row1 = $result1->fetch_assoc()) {
+          array_push($staffNameL, $row1['NameUid']);
+       }
+
+       while ($row2 = $result2->fetch_assoc()) {
+          array_push($staffNameR, $row2['NameUid']);
+       }
+
+       while ($row3 = $result3->fetch_assoc()) {
+          array_push($staffNameT, $row3['NameUid']);
+       }
+
+       for ($index=0; isset($staffNameL[$index])||isset($staffNameR[$index])||isset($staffNameT[$index]) ; $index++) { 
+           echo "<tr>
+                    <th>Cafe Staff</th>
+                    <td>".$staffNameL[$index]."</td>
+                    <td>".$staffNameR[$index]."</td>
+                    <td>".$staffNameT[$index]."</td>
+                 </tr>";
+       }
+    ?>
 </table>
+           
 <div class="masterinfo">You must allocate a Manager for EACH Cafe!</div>
 <div class="masterinfo"></div>
 <div>
@@ -57,12 +70,13 @@ include 'header.php';
 </div>
 <div id="showStaff">
 	<table class="staff">
-		<tr>
+	<tr>
 		<th>UID</th>
-		<th>Name</th>
-		<th>The Ref</th>
-		<th>Position</th>
+		<th>Name</th>		
 	</tr>
+    <?php
+      include 'includes/db_conn.php';
+      $result = $mysqli->query(SELECT * FROM)
 	<tr>
 		<th>Cafe Manager</th>
 		<td>Xxxx(CM1111)</td>

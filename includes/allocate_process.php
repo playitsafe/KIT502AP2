@@ -93,15 +93,18 @@ if (isset($_POST['submitAllocate'])) {
 		        	$oldManagerId = $row2['uid'];
 		    	    $mysqli->query("UPDATE $shopname SET Role = 'Staff' WHERE uid = '$oldManagerId'");
 		    	    $mysqli->query("INSERT INTO $shopname (uid, Name, Role) VALUES ('$allocateUid', '$fullname', 'Manager')");
+		    	    $mysqli->query("UPDATE users SET RoleTag = '$shopname' WHERE uid = '$allocateUid'");
 		    	    echo "<script>alert('Manager has been switched to your allocated one!');parent.location.href='../staff_manage.php'</script>";
 		        } else { //if shop has no manager
 		        	$mysqli->query("INSERT INTO $shopname (uid, Name, Role) VALUES ('$allocateUid', '$fullname', 'Manager')");
+		        	$mysqli->query("UPDATE users SET RoleTag = '$shopname' WHERE uid = '$allocateUid'");
 		        	echo "<script>alert('Manager has been allocated successfully!');parent.location.href='../staff_manage.php'</script>";
 		        }
 		        
             } elseif ($_POST['roleList']=='Staff') {//}end of select manager   
             	//if select allocate staff
                 $mysqli->query("INSERT INTO $shopname (uid, Name, Role) VALUES ('$allocateUid', '$fullname', 'Staff')");
+                $mysqli->query("UPDATE users SET RoleTag = '$shopname' WHERE uid = '$allocateUid'");
                 echo "<script>alert('Staff has been allocated successfully!');parent.location.href='../staff_manage.php'</script>";
             }     
 
@@ -130,12 +133,15 @@ if ($_POST['submitDelete']) {
 
 	    if ($resultCheck_a >= 1) { //Clear if existed
             	$mysqli->query("DELETE FROM LazenbyTeam WHERE uid='$deleteUid'");
+            	$mysqli->query("UPDATE users SET RoleTag = 'Unallocated' WHERE uid = '$deleteUid'");
             	echo "<script>alert('Staff removed successfully!!');parent.location.href='../staff_manage.php'</script>";
             } elseif ($resultCheck_b >= 1) {
             	$mysqli->query("DELETE FROM RefTeam WHERE uid='$deleteUid'");
-            	echo "<script>alert('Staff is not in any shop!');parent.location.href='../staff_manage.php'</script>";
+            	$mysqli->query("UPDATE users SET RoleTag = 'Unallocated' WHERE uid = '$deleteUid'");
+            	echo "<script>alert('Staff removed successfully!');parent.location.href='../staff_manage.php'</script>";
             } elseif ($resultCheck_c >= 1) {
             	$mysqli->query("DELETE FROM TradeTableTeam WHERE uid='$deleteUid'");
+            	$mysqli->query("UPDATE users SET RoleTag = 'Unallocated' WHERE uid = '$deleteUid'");
             	echo "<script>alert('Staff removed successfully!!!');parent.location.href='../staff_manage.php'</script>";
             } else {
             	echo "<script>alert('Staff is not in any shop!');parent.location.href='../staff_manage.php'</script>";
