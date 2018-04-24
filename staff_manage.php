@@ -1,4 +1,4 @@
-p<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="css/style.css">
@@ -20,10 +20,17 @@ include 'header.php';
 	</tr>
 	<tr>
 		<th>Cafe Manager</th>
-		<td>Xxxx(CM1111)</td>
-		<td>Yyyyy(CM2222)</td>
-		<td>Zzzzz(CM3333)</td>
-	</tr>
+		<td><?php
+            include 'includes/db_conn.php';
+            $managerL=$mysqli->query("SELECT * FROM LazenbyTeam WHERE Role='Manager'")->fetch_assoc()['Name'];
+            $managerR=$mysqli->query("SELECT * FROM RefTeam WHERE Role='Manager'")->fetch_assoc()['Name']; 
+            $managerT=$mysqli->query("SELECT * FROM TradeTableTeam WHERE Role='Manager'")->fetch_assoc()['Name'];             
+            echo $managerL . "</td><td>" . $managerR . "</td><td>" . $managerT . "</td></tr>" ;
+         ?>
+	<?php
+       include 'includes/db_conn.php';
+       $rowL = $mysqli->query("SELECT * FROM LazenbyTeam WHERE Role='Staff'")->fetch_assoc();
+     ?>		
 	<tr>
 		<th>Cafe Staff</th>
 		<td>Xxxx(CM1111)</td>
